@@ -9,7 +9,7 @@ import subprocess
 import time
 from pynput import keyboard
 
-# Configure OpenAI API to use local server
+# Configure OpenAI API to use a local server
 client = openai.OpenAI(
     base_url="http://localhost:8080/v1",
     api_key="sk-no-key-required"
@@ -56,7 +56,7 @@ def run_assistant(prompt, retries=3, delay=5):
                     {"role": "user", "content": prompt}
                 ]
             )
-            return response.choices[0].message.content  # Changed line
+            return response.choices[0].message.content  
         except openai.InternalServerError as e:
             print(f"An internal server error occurred: {e}. Retrying in {delay} seconds...")
             time.sleep(delay)
