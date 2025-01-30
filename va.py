@@ -1,4 +1,4 @@
-# Using llamafile as server
+# Using llamafile server
 
 import openai
 import json
